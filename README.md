@@ -62,13 +62,3 @@ Note: Using AI for pitch selection is not necessary - simple statistical analysi
 jupyter notebook
 ```
 Open the notebook for training pitching at `training/train_pitch.ipynb`. The notebook is annotated with explanations of the code.
-
-### Test the AI
-**IMPORTANT:** The trained model is located at `models/final_swing_model.h5`. This model was trained at 18 frames per second (FPS). The following script will output how many FPS it is running at during analysis. If it cannot run at 18 FPS then the model will not work properly and will likely mistime its swings. I used [Tensorflow GPU](https://www.tensorflow.org/guide/gpu) and you may need to as well to achieve this speed. Additionally, the model was trained at 720p display resolution. If your display is different from this you will need to adjust the screenshot bounds in the code.
-```
-cd inference
-python play.py
-```
-This script is used to play an actual game. This script will run until you terminate it and can be controlled with keypresses:
-`p`: Start/stop swing analysis to determine if the AI should swing. While analysis is active, the AI will swing automatically if it determines it should.
-`o`: Throws a right splitter pitch
